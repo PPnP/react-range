@@ -30,8 +30,7 @@ class Range extends React.Component<IProps> {
     allowOverlap: false,
     draggableTrack: false,
     min: 0,
-    max: 100,
-    limit: 100
+    max: 100
   };
   trackRef = React.createRef<HTMLElement>();
   thumbRefs: React.RefObject<HTMLElement>[] = [];
