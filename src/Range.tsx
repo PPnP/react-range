@@ -30,7 +30,8 @@ class Range extends React.Component<IProps> {
     allowOverlap: false,
     draggableTrack: false,
     min: 0,
-    max: 100
+    max: 100,
+    limit: 100
   };
   trackRef = React.createRef<HTMLElement>();
   thumbRefs: React.RefObject<HTMLElement>[] = [];
@@ -62,7 +63,6 @@ class Range extends React.Component<IProps> {
     for (let i = 0; i < this.numOfMarks + 1; i++) {
       this.markRefs[i] = React.createRef<HTMLElement>();
     }
-
   }
 
   componentDidMount() {
@@ -525,8 +525,8 @@ class Range extends React.Component<IProps> {
   };
 
   normalizeValue = (value: number, index: number) => {
-    const { min, max, step, allowOverlap, values } = this.props;
-    return normalizeValue(value, index, min, max, step, allowOverlap, values);
+    const { min, max, step, allowOverlap, values, limit } = this.props;
+    return normalizeValue(value, index, min, max, step, allowOverlap, values, limit);
   };
 
   onEnd = (e: Event) => {
@@ -573,9 +573,7 @@ class Range extends React.Component<IProps> {
       let markHeight = 9999;
       let markWidth = 9999;
       if (this.markRefs[i].current) {
-        const markRect = (this.markRefs[
-          i
-        ] as any).current.getBoundingClientRect();
+        const markRect = (this.markRefs[i] as any).current.getBoundingClientRect();
         markHeight = markRect.height;
         markWidth = markRect.width;
       }

@@ -28,7 +28,8 @@ export function normalizeValue(
   max: number,
   step: number,
   allowOverlap: boolean,
-  values: number[]
+  values: number[],
+  limit: number = max
 ) {
   const BIG_NUM = 10e10;
   value = Math.round(value * BIG_NUM) / BIG_NUM;
@@ -38,6 +39,7 @@ export function normalizeValue(
     if (prev && prev > value) return prev;
     if (next && next < value) return next;
   }
+  if (value > limit) return limit
   if (value > max) return max;
   if (value < min) return min;
   // `remainder` is a difference between the given value and a full step value

@@ -201,6 +201,14 @@ max: number;
 
 The range end. Can be decimal or negative. Default is `100`.
 
+### limit (optional)
+
+```ts
+limit: number;
+```
+
+The range end that does not affect `max` value and appearance of a slider, but disallows further increase. Default is `100`, if not explicitly specified, equals to `max`.
+
 ### step (optional)
 
 ```ts

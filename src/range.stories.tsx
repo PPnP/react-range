@@ -23,6 +23,7 @@ import TwoThumbsExample from '../examples/TwoThumbs';
 import TwoThumbsDraggableTrackExample from '../examples/TwoThumbsDraggableTrack';
 import TwoThumbsDraggableTrackDownDirectionExample from '../examples/TwoThumbsDraggableTrackDownDirection';
 import UpDirectionExample from '../examples/UpDirection';
+import WithLimitExample from '../examples/WithLimit';
 
 import type { StoryProps } from '@ladle/react';
 
@@ -34,6 +35,9 @@ export const AnimatingContainer: React.FC<StoryProps> = ({ globalState }) => (
 );
 export const Basic: React.FC<StoryProps> = ({ globalState }) => (
   <BasicExample rtl={globalState.rtl} />
+);
+export const WithLimit: React.FC<StoryProps> = ({ globalState }) => (
+  <WithLimitExample rtl={globalState.rtl} />
 );
 export const BasicWithBorder: React.FC<StoryProps> = ({ globalState }) => (
   <BasicWithBorderExample rtl={globalState.rtl} />
