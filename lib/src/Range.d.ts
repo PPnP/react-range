@@ -10,7 +10,6 @@ declare class Range extends React.Component<IProps> {
         draggableTrack: boolean;
         min: number;
         max: number;
-        limit: number;
     };
     trackRef: React.RefObject<HTMLElement>;
     thumbRefs: React.RefObject<HTMLElement>[];
