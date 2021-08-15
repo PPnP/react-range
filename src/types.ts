@@ -12,7 +12,7 @@ export interface IProps {
   values: number[];
   min: number;
   max: number;
-  limit: number;
+  limit?: number;
   step: number;
   direction: Direction;
   allowOverlap: boolean;
